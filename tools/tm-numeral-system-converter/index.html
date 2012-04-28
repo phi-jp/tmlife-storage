@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title>TM Numeral System Converter</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="https://raw.github.com/phi1618/formobserver.tm.js/master/src/formobserver.tm.js"></script>
+        <script src="main.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <h1>TM Numeral System Converter</h1>
+            <p>
+                基数変換ツールです.
+            </p>
+        </header>
+        
+        <div id="contents">
+            
+            <section>
+                <h2>INPUT</h2>
+                <p>
+                    ここに数値を入力してください.
+                </p>
+                <form name="mainForm">
+                    <p>
+                        <label><input type="radio" name="cardinality" value="Decimal" checked />Decimal(10進数)</label>
+                        <label><input type="radio" name="cardinality" value="Hex" />Hex(16進数)</label>
+                        <label><input type="radio" name="cardinality" value="Binary" />Binary(2進数)</label>
+                    </p>
+                    <p>
+                        <textarea id="src" cols="32" rows="24" class="tm-form-observer">
+32
+64
+128
+256</textarea>
+                    </p>
+                </form>
+            </section>
+            
+            <section>
+                <h2>OUTPUT</h2>
+                <p>
+                    変換後の数値
+                </p>
+                <h3>Decimal(10進数)</h3>
+                <textarea id="decimal-dst" cols="32" rows="6"></textarea>
+                
+                <h3>Hex(16進数)</h3>
+                <textarea id="hex-dst" cols="32" rows="6"></textarea>
+                
+                <h3>Binary(2進数)</h3>
+                <textarea id="binary-dst" cols="32" rows="6"></textarea>
+            </section>
+            
+        </div>
+        
+        <footer>
+            <p>
+                <a href="http://tmlife.net">Home</a>
+            </p>
+        </footer>
+    </body>
+    
+</html>

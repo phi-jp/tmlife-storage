@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title>TM Markdown Editor</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        
+        <script src="https://raw.github.com/evilstreak/markdown-js/master/lib/markdown.js"></script>
+        <script src="https://raw.github.com/phi1618/formobserver.tm.js/master/src/formobserver.tm.js"></script>
+        <script src="main.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <h1>TM Markdown Editor</h1>
+            <p>
+                シンプルなマークダウンエディタです.
+            </p>
+        </header>
+        
+        <div id="contents">
+            
+            <section>
+                <h2>INPUT</h2>
+                <p>
+                    Markdown
+                </p>
+                <p>
+                    <textarea id="src" cols="32" rows="24" class="tm-form-observer">
+# TM Markdown Editor
+シンプルなマークダウンエディタです.
+
+## 段落2
+### 段落3
+#### 段落4
+
+***
+
+## 装飾
+*強調* もしくは _強調_  
+**強い強調** もしくは __強い強調__
+
+## コード
+    #include <stdio.h>
+    
+    int main() {
+        printf("Hello, world!\n");
+        return false;
+    };
+
+
+## リスト
+* リスト0
+    * サブリスト0
+    * サブリスト1
+    * サブリスト2
+* リスト1
+* リスト2
+* リスト3
+
+## 引用
+> このテキストは引用の可能性があるのでくれぐれも転載する際にはご注意下さい
+
+## リンク
+[リンクのテキスト](http://tmlife.net "my blog")
+
+</textarea>
+                </p>
+            </section>
+            
+            <section>
+                <h2>OUTPUT</h2>
+                <form name="modeForm">
+                    <p>
+                        <label><input type="radio" name="mode" value="html-field" checked />HTML</label>
+                        <label><input type="radio" name="mode" value="preview" />Preview</label>
+                    </p>
+                </form>
+                <p id="html-field">
+                    <textarea id="dst" cols="32" rows="24"></textarea>
+                </p>
+                <iframe id="preview"></iframe>
+            </section>
+            
+        </div>
+        
+        <footer>
+            <p>
+                <a href="http://tmlife.net">Home</a>
+            </p>
+        </footer>
+    </body>
+    
+</html>
