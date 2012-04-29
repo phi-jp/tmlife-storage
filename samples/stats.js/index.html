@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title>Stats.js Sample</title>
+        <script src="https://raw.github.com/mrdoob/stats.js/master/src/Stats.js"></script>
+        <script>
+            var COUNT   = 512;    // 描画する四角形の数
+            var FPS     = 30;
+            var SCREEN_WIDTH = 415;
+            var SCREEN_HEIGHT= 415;
+            
+            window.onload = function() {
+                // Canvas
+                var canvas = document.getElementById("world");
+                canvas.width    = SCREEN_WIDTH;
+                canvas.height   = SCREEN_HEIGHT;
+                canvas.style.position = "fixed";
+                canvas.style.left = "0px";
+                canvas.style.top  = "0px";
+                document.body.appendChild(canvas);
+                
+                // Stats
+                var stats = new Stats();
+                // 右上に設定
+                stats.getDomElement().style.position = "fixed";
+                stats.getDomElement().style.right    = "5px";
+                stats.getDomElement().style.top      = "5px";
+                document.body.appendChild(stats.getDomElement());
+                
+                // コンテキスト
+                var context= canvas.getContext("2d");
+                setInterval(function(){
+                    // クリア
+                    context.globalCompositeOperation = "source-over";   // 乗算設定
+                    context.fillStyle = "black";
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // 四角形描画
+                    context.globalCompositeOperation = "lighter";   // 乗算設定
+                    for (var i=0; i<COUNT; ++i) {
+                        var x = Math.random()*(415-32);
+                        var y = Math.random()*(415-32);
+                        context.fillStyle = "hsl(" + (360/COUNT)*i + ", 50%, 50%)";
+                        context.fillRect(x, y, 32, 32);
+                    }
+                    
+                    // stats 更新
+                    stats.update();
+                }, 1000/FPS);    // 30fps
+                
+            };
+        </script>
+    </head>
+    
+    <body>
+        <canvas id="world"></canvas>
+    </body>
+    
+</html>
