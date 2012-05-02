@@ -1,6 +1,9 @@
 
+
 // merger モジュールを読み込む
-var merger = require("./merger");
+var merger = require("./../lib/index.js");
+
+console.log(merger);
 
 // マージするファイルリスト
 var files = [

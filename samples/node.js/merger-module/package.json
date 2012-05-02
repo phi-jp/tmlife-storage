@@ -1,0 +1,14 @@
+{
+  "author": "phi <phi1618jp@gmail.com> (http://tmlife.net)",
+  "name": "merger",
+  "description": "merge files",
+  "version": "0.0.4",
+  "homepage": "http://tmlife.net",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "main": "./lib/index.js",
+  "engines": {
+    "node": "*"
+  }
+}
