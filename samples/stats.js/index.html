@@ -9,8 +9,8 @@
         <script>
             var COUNT   = 512;    // 描画する四角形の数
             var FPS     = 30;
-            var SCREEN_WIDTH = 415;
-            var SCREEN_HEIGHT= 415;
+            var SCREEN_WIDTH = 460;
+            var SCREEN_HEIGHT= 460;
             
             window.onload = function() {
                 // Canvas
@@ -41,8 +41,8 @@
                     // 四角形描画
                     context.globalCompositeOperation = "lighter";   // 乗算設定
                     for (var i=0; i<COUNT; ++i) {
-                        var x = Math.random()*(415-32);
-                        var y = Math.random()*(415-32);
+                        var x = Math.random()*(SCREEN_WIDTH-32);
+                        var y = Math.random()*(SCREEN_HEIGHT-32);
                         context.fillStyle = "hsl(" + (360/COUNT)*i + ", 50%, 50%)";
                         context.fillRect(x, y, 32, 32);
                     }
