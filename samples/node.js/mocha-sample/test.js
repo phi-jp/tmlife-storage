@@ -1,5 +1,6 @@
-function assert(expr, msg) {
-    if (!expr) throw new Error(msg || 'failed');
+
+if (global.assert) {
+    assert = require('assert');
 }
 
 describe('Number', function() {
